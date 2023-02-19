@@ -1,5 +1,8 @@
 // Your code here
+let chosenColor = "red";
 const table = document.getElementsByTagName("table")[0];
+const addRowButton = document.getElementById("add-row");
+const select = document.getElementsByTagName("select");
 
 function makeRow() {
   const row = document.createElement("tr");
@@ -12,5 +15,19 @@ function makeRow() {
   table.appendChild(row);
 }
 
-const addRowButton = document.getElementById("add-row");
 addRowButton.addEventListener("click", makeRow);
+
+function colorize(event) {
+  const target = event.target;
+  if (target.className.length) {
+    target.className = "";
+  } else {
+    target.className = chosenColor;
+  }
+}
+
+table.addEventListener("click", colorize);
+
+select.addEventListener("change", function (event) {
+  chosenColor = event.target.className;
+});

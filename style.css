@@ -21,3 +21,15 @@ td {
   width: 50px;
   background-color: lightgray;
 }
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.purple {
+  background-color: purple;
+}
